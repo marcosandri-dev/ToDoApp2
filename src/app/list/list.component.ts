@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+	check = true;
+  doneStyle = "none";
+
   constructor() { 
   	setTimeout(() => {
   		this.check = false;
@@ -16,13 +19,12 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
 
-  check = true;
-
+  //todos = [{todo: "This is my first To Do!"}, {todo: "Another To Do"}, {todo: "Well, this is getting a bit out of control"}, {todo: "Throwback Thursday!"}];
   todos = ['This is my first To Do!', 'Another To Do', 'Well, this is getting a bit out of control', 'Throwback Thursday!' ];
 
-  onAdd() {
-  	this.todos.push(this.todoText);
-  	this.todoText = "";
+  //Actually adds the To Do
+  addedTodo(todoData) {
+  	this.todos.push(todoData);
   }
 
 }

@@ -1,30 +1,12 @@
-<div class="row">
-  <div class="col-xs-8"> 
-    <input type="text" [(ngModel)]="todoText" class="form-control" placeholder="Insert a ToDo!" />
-  </div>
-  <div class="col-xs-2">
-    <button type="button" [disabled]="!todoText" class="btn btn-primary" (click)="onAdd()">Add</button>
-  </div>
-</div>
+  <app-insert (todoAdded)="addedTodo($event)"></app-insert>
 
 <div style="margin-top:30px">
   
-<!-- 	<div class="row justify-content-center">
-	    <div class="col-10"><p ng-show="!todos.length">No Todos!</p></div>
-	</div> -->
+	<div class="row justify-content-center">
+	    <div class="col-10"><p *ngIf="!todos.length">No Todos!</p></div>
+	</div>
 
-  <div *ngFor="let todo of todos" class="row">
-    <div class="col-xs-1 text-right">
-      <p class="icon">X</p>
-    </div>
-    <div class="col-xs-8">
-      <!-- <span> {{ todo.giorno }} </span> -->
-      <p> {{ todo }} </p>
-    </div>
-    <div class="col-xs-2 text-center">
-      <input type="checkbox" [checked]='check' />
-    </div>
-  </div>
+  <app-todo-item *ngFor= "let todo of todos" [toDoItem]="todo"></app-todo-item>
   
   <hr>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-insert',
@@ -7,14 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsertComponent implements OnInit {
 
+  @Output() todoAdded = new EventEmitter();
+
+  todoText = "";
 	constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onAdd() {
-  	ListComponent.todos.push(this.todoText);
-  	this.todoText = "";
+  	this.todoAdded.emit(this.todoText);
+    this.todoText = "";
   }
 
 }
