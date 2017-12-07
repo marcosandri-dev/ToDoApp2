@@ -7,6 +7,7 @@ import { TitleComponent } from './title/title.component';
 import { ListComponent } from './list/list.component';
 import { InsertComponent } from './insert/insert.component';
 import { TodoItemComponent } from './list/todo-item/todo-item.component';
+import { ButtonsComponent } from './buttons/buttons.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TodoItemComponent } from './list/todo-item/todo-item.component';
     TitleComponent,
     ListComponent,
     InsertComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    ButtonsComponent
   ],
   imports: [
     BrowserModule,

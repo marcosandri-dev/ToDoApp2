@@ -1,9 +1,9 @@
 <div class="row justify-content-center">
   <div class="col-8">
     <!-- <span> {{ todo.giorno }} </span> -->
-    <p [ngStyle]="{'text-decoration': doneStyle}"> {{ toDoItem }} </p>
+    <p [ngStyle]="{'text-decoration': doneStyle}"> {{ toDoItem.todo }} </p>
   </div>
   <div class="col-2 text-center">
-    <input type="checkbox" (click)="onChecked()" />
+    <input type="checkbox" [(ngModel)]="toDoItem.checked" [checked]="toDoItem.checked" (click)="onChecked()" />
   </div>
 </div>

@@ -1,6 +1,8 @@
-  <app-insert (todoAdded)="addedTodo($event)"></app-insert>
+<app-insert (todoAdded)="addedTodo($event)"></app-insert> <!-- Questo deve essere cancellato! -->
 
-<div style="margin-top:30px">
+<h4 style="margin:15px;color:#444">Your things to do:</h4>
+
+<div>
   
 	<div class="row justify-content-center">
 	    <div class="col-10"><p *ngIf="!todos.length">No Todos!</p></div>
@@ -11,3 +13,5 @@
   <hr>
 
 </div>
+
+<app-buttons (completeTodo)="completedTodos()"></app-buttons>
